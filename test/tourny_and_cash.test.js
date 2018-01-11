@@ -1,0 +1,40 @@
+const Table = require('../')
+const fs = require('fs')
+const tournyExample = fs.readFileSync(
+  __dirname + '/fixtures/tournament_chips.txt',
+  'utf8'
+)
+const cashExample = fs.readFileSync(
+  __dirname + '/fixtures/standard_dollars.txt',
+  'utf8'
+)
+
+let table
+describe('standard tourny or cash game', () => {
+  beforeEach(() => (table1 = new Table(tournyExample)))
+  beforeEach(() => (table2 = new Table(cashExample)))
+
+  test('can count the number of hands in a file', () => {
+    expect(table1.handCount()).toBe(1)
+    // expect(table2.handCount()).toBe()
+  })
+
+  test('can fetch the hero hand for the first hand', () => {
+    expect(table2.heroHand(0)).toEqual([
+      { number: 'J', suit: 'c' },
+      { number: '7', suit: 's' }
+    ])
+
+    expect(table1.heroHand(0)).toEqual([
+      // { number: '', suit: '' },
+      // { number: '', suit: '' }
+    ])
+  })
+
+  test('can fetch the hero hand for the fourth hand', () => {
+    expect(table2.heroHand(3)).toEqual([
+      // { number: '', suit: '' },
+      // { number: '', suit: '' }
+    ])
+  })
+})
