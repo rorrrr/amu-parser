@@ -58,11 +58,11 @@ Run `npm test` to see that we have 1 passing test and 2 failing. Open tourny_and
 
 Write tests for the following and then create methods in src/index.js to make them pass (test on both files if possible):
 
-\*'correctly determines if the game is a tournament game' (says Tourmanent in first line if it is)
+Markup : \* 'correctly determines if the game is a tournament game' (says Tourmanent in first line if it is)
 
-\*'can determine tournament buyin if table is tournament' (says an amount in first line, if it is not a tournament return null)
+* 'can determine tournament buyin if table is tournament' (says an amount in first line, if it is not a tournament return null)
 
-\*'can determine tournament id if table is tournament'
+* 'can determine tournament id if table is tournament'
 
 \*'can return the correct player of the game' (hero refers to the person whose cards we see aka "Dealt to")
 
