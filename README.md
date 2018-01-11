@@ -64,20 +64,20 @@ Markup : \* 'correctly determines if the game is a tournament game' (says Tourma
 
 * 'can determine tournament id if table is tournament'
 
-\*'can return the correct player of the game' (hero refers to the person whose cards we see aka "Dealt to")
+* 'can return the correct player of the game' (hero refers to the person whose cards we see aka "Dealt to")
 
-\*'can fetch our own stacksize before the first hand' ('Seat 1: rorrrr ($1.60 in chips') normally line 3 onwards shows everyones stacksize (the amount of money they have to wager) so in this case heroStackSize = $1.60)
+* 'can fetch our own stacksize before the first hand' ('Seat 1: rorrrr ($1.60 in chips') normally line 3 onwards shows everyones stacksize (the amount of money they have to wager) so in this case heroStackSize = $1.60)
 
-\*'can determine handID' (u know this one)
+* 'can determine handID' (u know this one)
 
-\*'can fetch the pot size' (include $ if its there)
+* 'can fetch the pot size' (include $ if its there)
 
-\*'can determine date and time of tourny or cash hand'
+* 'can determine date and time of tourny or cash hand'
 
-\*'can determine if seat is occupied who is in it' (tell it a hand number and seat number and receive a name)
+* 'can determine if seat is occupied who is in it' (tell it a hand number and seat number and receive a name)
 
-\*'can determine seat number of button' (hand tells you where)
+* 'can determine seat number of button' (hand tells you where)
 
-\*'can determine seat number of small blind' (bit more difficult)
+* 'can determine seat number of small blind' (bit more difficult)
 
-\*'can determine seat number of big blind'
+* 'can determine seat number of big blind'
