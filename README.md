@@ -38,7 +38,8 @@ Seat 2: TIGERPAPA (big blind) showed [8s As] and won (1070) with two pair, Aces 
 
 We would get:
 
-```{id: 179581295772,
+```
+{id: 179581295772,
   heroName: "rorrrr",
   heroHand: "Tc Kc",
   xxxxxx: "yyyyy"
