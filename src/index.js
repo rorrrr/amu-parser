@@ -27,6 +27,9 @@ class Table {
     // return
   }
 
+  tournamentChecker(handnumber) {
+    return this.parsedHands[handnumber]
+  }
   /////PRIVATE METHODS (only used within other functions in this file) /////
 
   startingCards(handNumber) {
