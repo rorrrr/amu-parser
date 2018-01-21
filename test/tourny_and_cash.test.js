@@ -40,5 +40,15 @@ describe('standard tourny or cash game', () => {
 
   test('can determine if game is a tournament game', () => {
     expect(table1.tournamentChecker(0)).toEqual(true)
+    expect(table2.tournamentChecker(0)).toEqual(false)
+  })
+
+  test('can determine tournament id if table is tournament', () => {
+    expect(table1.getTournamentId(0)).toBe('#2154443950')
+    // expect(table2.getTournamentId(0)).toBe(null)
+  })
+
+  test('can return the correct player of the game', () => {
+    expect(table1.heroName(0)).toBe('rorrrr')
   })
 })

@@ -23,13 +23,35 @@ class Table {
     return this.startingCards(handNumber)
   }
 
-  heroName() {
-    // return
+  heroName(handnumber) {
+    var heroHandDealtData = this.heroHandDealt(handnumber)
+    console.log('xxxxxx', heroHandDealtData)
   }
 
   tournamentChecker(handnumber) {
-    return this.parsedHands[handnumber]
+    var data = this.parsedHands[handnumber][0]
+    var newData = data.includes('Tournament')
+    return newData
   }
+
+  getTournamentId(handnumber) {
+    var dataTest = this.parsedHands[handnumber][0]
+    var tournamentCheckerData = function(handnumber) {
+      var data = this.parsedHands[handnumber][0]
+      var newData = data.includes('Tournament')
+      return newData
+    }
+
+    if (tournamentCheckerData) {
+      var tournamentId = dataTest.split(' ', 5)[4]
+      var idWithoutComma = tournamentId.replace(/,\s*$/, '')
+
+      return idWithoutComma
+    } else {
+      return null
+    }
+  }
+
   /////PRIVATE METHODS (only used within other functions in this file) /////
 
   startingCards(handNumber) {
