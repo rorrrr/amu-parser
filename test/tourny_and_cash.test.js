@@ -51,4 +51,8 @@ describe('standard tourny or cash game', () => {
   test('can return the correct player of the game', () => {
     expect(table1.heroName(0)).toBe('rorrrr')
   })
+
+  test('can return own stacksize before own hand', () => {
+    expect(table1.stackSize('rorrrr')).toBe(535)
+  })
 })

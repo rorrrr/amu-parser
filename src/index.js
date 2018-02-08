@@ -25,7 +25,12 @@ class Table {
 
   heroName(handnumber) {
     var heroHandDealtData = this.heroHandDealt(handnumber)
-    console.log('xxxxxx', heroHandDealtData)
+    for (var i = 0; i < heroHandDealtData.length; i++) {
+      var name = heroHandDealtData.split(' ')[0]
+      var firstWord = name
+      console.log('xxxxxx', firstWord)
+      return firstWord
+    }
   }
 
   tournamentChecker(handnumber) {
@@ -50,6 +55,10 @@ class Table {
     } else {
       return null
     }
+  }
+
+  stackSize(name) {
+    // find the first instance of the name and then refine search to that line
   }
 
   /////PRIVATE METHODS (only used within other functions in this file) /////
