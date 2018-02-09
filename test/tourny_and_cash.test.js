@@ -53,6 +53,35 @@ describe('standard tourny or cash game', () => {
   })
 
   test('can return own stacksize before own hand', () => {
-    expect(table1.stackSize('rorrrr')).toBe(535)
+    expect(table1.stackSize(0, 'rorrrr')).toBe('535')
+  })
+
+  test('can determine handID', () => {
+    expect(table1.getHandId(0)).toBe('#179581295772')
+  })
+
+  test('can return the pot size', () => {
+    expect(table1).toBe('1070')
+  })
+
+  test('can determine date and time of tourny or cash hand', () => {
+    expect(table1).toBe('2017/12/15 16:22:27 WET [2017/12/15 11:22:27 ET]')
+    // if tourney do .....
+  })
+
+  test('can determine if seat is occupied who is in it', () => {
+    expect(table1).toBe('rorrrr')
+  })
+
+  test('can determine seat number of button', () => {
+    expect(table1).toBe('#1')
+  })
+
+  test('can determine seat number of small blind', () => {
+    expect(table1).toBe('Seat 1')
+  })
+
+  test('can determine seat number of big blind', () => {
+    expect(table1).toBe('Seat 2')
   })
 })
