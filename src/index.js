@@ -43,6 +43,19 @@ class Table {
     return newData
   }
 
+  getTimeAndDate(handnumber) {
+    if (this.tournamentChecker(handnumber)) {
+      var data = this.parsedHands[handnumber][0]
+      var splitData = data.split('- ')[2]
+      return splitData
+      console.log('xxxxxxx', splitData)
+    } else {
+      var gameData = this.parsedHands[handnumber][0]
+      var gameSplitData = gameData.split('- ')[1]
+      return gameSplitData
+    }
+  }
+
   getTournamentId(handnumber) {
     var dataTest = this.parsedHands[handnumber][0]
     var tournamentCheckerData = function(handnumber) {
@@ -77,13 +90,13 @@ class Table {
   getHandId(handNumber) {
     var data = this.parsedHands[handNumber]
     var getId = data[0].split(' ')[2]
-    console.log('getId', getId)
+    // console.log('getId', getId)
     var idLength = getId.length - 1
-    console.log('id length', idLength)
+    // console.log('id length', idLength)
     while (getId.charAt(idLength) === ':') {
       getId = getId.substr(0, idLength)
     }
-    console.log('getId', getId)
+    // console.log('getId', getId)
     return getId
   }
 
