@@ -60,9 +60,9 @@ describe('standard tourny or cash game', () => {
     expect(table1.getHandId(0)).toBe('#179581295772')
   })
 
-  // test('can return the pot size', () => {
-  //   expect(table1).toBe('1070')
-  // })
+  test('can return the pot size', () => {
+    expect(table1.getPotSize(0)).toBe('1070')
+  })
 
   test('can determine date and time of tourny or cash hand', () => {
     expect(table1.getTimeAndDate(0)).toBe(
@@ -73,19 +73,19 @@ describe('standard tourny or cash game', () => {
     )
   })
 
-  // test('can determine if seat is occupied who is in it', () => {
-  //   expect(table1).toBe('rorrrr')
-  // })
+  test('can determine if seat is occupied who is in it', () => {
+    expect(table1.isSeatOccupied(0, 1)).toBe('rorrrr')
+  })
 
-  // test('can determine seat number of button', () => {
-  //   expect(table1).toBe('#1')
-  // })
+  test('can determine seat number of button', () => {
+    expect(table1.getSeatNumberOfButton(0)).toBe('#1')
+  })
 
-  // test('can determine seat number of small blind', () => {
-  //   expect(table1).toBe('Seat 1')
-  // })
+  test('can determine seat number of small blind', () => {
+    expect(table1.getSmallBlindSeatNumber(0)).toBe('1')
+  })
 
-  // test('can determine seat number of big blind', () => {
-  //   expect(table1).toBe('Seat 2')
-  // })
+  test('can determine seat number of big blind', () => {
+    expect(table1.getBigBlindSeatNumber(0)).toBe('2')
+  })
 })

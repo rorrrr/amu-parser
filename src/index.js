@@ -56,6 +56,31 @@ class Table {
     }
   }
 
+  isSeatOccupied(handNumber, seatnumber){
+    var data = this.parsedHands[handNumber]
+    var searchedForSeat = "Seat " + seatnumber + ": "
+    var newData = data.find(line => line.startsWith(searchedForSeat))
+    var test = newData.split(searchedForSeat)[1].split(' ')[0]
+
+    return test
+  }
+
+  getSeatNumberOfButton(handnumber){
+    var data = this.parsedHands[handnumber]
+    var newData = data.find(line => line.startsWith('Table'))
+      var test = newData.split('Seat ')[1]
+      var buttonNumber = test.split(" ")[0]
+      return buttonNumber
+  }
+
+  getPotSize(handnumber){
+    var data = this.parsedHands[handnumber]
+    var newData = data.find(line => line.startsWith('Total'))
+    var potSize =  newData.split(" ")[2]
+    return potSize
+
+  }
+
   getTournamentId(handnumber) {
     var dataTest = this.parsedHands[handnumber][0]
     var tournamentCheckerData = function(handnumber) {
@@ -100,6 +125,45 @@ class Table {
     return getId
   }
 
+  getSmallBlindSeatNumber(handnumber){
+    var data = this.parsedHands[handnumber]
+    console.log('test', data.length)
+   for (var i = 0; i < data.length; i++){
+    var nested = data[i]
+    var test = nested.includes('(small blind)')
+    if (test) {
+      console.log([i])
+      var index = data[i].split(" ")[1]
+      var seatNumberWithoutColon = index.slice(0, -1)
+      return seatNumberWithoutColon
+
+
+      console.log(seatNumberWithoutColon)
+
+    }
+
+   }
+  }
+
+  getBigBlindSeatNumber(handnumber){
+     var data = this.parsedHands[handnumber]
+     console.log('test', data.length)
+    for (var i = 0; i < data.length; i++){
+     var nested = data[i]
+     var test = nested.includes('(big blind)')
+     if (test) {
+       console.log([i])
+       var index = data[i].split(" ")[1]
+       var seatNumberWithoutColon = index.slice(0, -1)
+       return seatNumberWithoutColon
+
+
+       console.log(seatNumberWithoutColon)
+
+     }
+
+    }
+  }
   /////PRIVATE METHODS (only used within other functions in this file) /////
 
   startingCards(handNumber) {
